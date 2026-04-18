@@ -11,20 +11,17 @@ int main()
     printf("second number: ");
     scanf("%d" , &val_2);
     
-    if(val_1 > val_2)
-        GCD = highestCommon(val_2 ,val_1 );
-    else
-        GCD = highestCommon(val_1 ,val_2 );
+    GCD = highestCommon(val_1 ,val_2 );
 
     printf("GCD of %d and %d = %d \n" ,val_1 ,val_2 ,GCD);
 }
 
 int highestCommon(int a , int b)
 {
-    if(a == 0)
-        return b;
+    if(b == 0)
+        return a;
     else
     {
-       return highestCommon(b % a ,a);
+       return highestCommon(b ,a % b);
     } 
 }
